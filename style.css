@@ -6,10 +6,26 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Inter", serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   background-color: #FAFAF7;
+  text-rendering: optimizeLegibility;
+  hyphens: auto;
+  overscroll-behavior: none;
+}
+::selection {
+  background: rgba(136, 186, 68, 0.5);
+  color: #FFFF;
+}
+.hero {
+  animation: fadeUp .8s ease;
+}
+
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
 }
 
 /* header section ↓ */
@@ -23,29 +39,47 @@ header {
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
   height: 4rem;
   width: 100%;
-  padding: 2rem;
+  padding: 1.5rem;
   max-width: 1200px;
   position: fixed;
   top: 0;
   z-index: 999;
 }
-.cat {
-  color: #5B3A22;
-  cursor: pointer;
+.my-logo {
+  stroke: #F47A2A;
+  fill: #F47A2A;
+  height: 2rem;
+  width: auto;
+  opacity: 70%;
+  user-select: none;
+  transition: color 0.3s, transform 0.2s;
 }
+.my-logo:hover {
+  color: #A66C3A;
+  transform: scale(1.1);
+}
+
 .navbar ul {
   display: flex;
   list-style-type: none;
   gap: 1.5rem;
 }
-.navbar a{
+.navbar {
   text-decoration: none;
-  color: #5B3A22;
+  background-color: #F47A2A;
+  color: #FAFAF2;
+  border-radius: 24px;
+  padding: 0.5rem 0.5rem;
+  opacity: 80%;
+  transition: transform 0.5s ease;
 }
-.navbar a:hover {
-  color: #F47A2A;
+.navbar:hover {
+  background-color: #F47A2A;
+  color: #FAFAF2;
 }
-
+.navbar:active{
+    transform: scale(1.05);
+}
 /* hero section ↓ */
 .hero {
   display: flex;
@@ -68,10 +102,12 @@ header {
 .port {
   font-size: 3rem;
   color: #F47A2A;
+  pointer-events: none;
 }
 .cv {
   font-size: 1rem;
   color: #5B3A22;
+  pointer-events: none;
 }
 .herobtns {
   display: flex;
@@ -84,6 +120,7 @@ header {
   border-radius: 24px;
   text-decoration: none;
   padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s ease;
 }
 .mypdf {
   display: inline-block;
@@ -93,9 +130,13 @@ header {
   border-radius: 24px;
   text-decoration: none;
   padding: 0.5rem 1.5rem;
+  transition: transform 0.5s ease, background-color 0.3s ease;
 }
 .mypdf:hover {
   background-color: #88BA44;
+}
+.mypdf:active {
+  transform: scale(1.06);
 }
 .herobtns a{
   text-decoration: none;
@@ -113,6 +154,7 @@ header {
   padding: 6rem;
   max-width: 1200px;
   gap: 2rem;
+  
 }
 .myphoto {
   height: 15rem;
@@ -126,12 +168,14 @@ header {
   color: #F47A2A;
   text-align: center;
   margin-bottom: 2rem;
+  pointer-events: none;
 }
 .mycv {
   text-align: justify;
   color: #5B3A22;
   width: 350px;
   justify-content: center;
+  pointer-events: none;
 }
 .lalala {
   width: 100vw;
@@ -145,6 +189,7 @@ header {
   color: #F47A2A;
   justify-content: center;
   text-align: center;
+  pointer-events: none;
 }
 .icons img {
   flex-direction: column;
@@ -168,19 +213,24 @@ header {
   margin-bottom: 2rem;
   text-align: center;
   justify-content: center;
+  pointer-events: none;
 }
-.my-porrtfio {
+.my-portefuelle {
   margin-bottom: 4rem;
-  display: inline-blok;
+  display: inline-block;
   background-color: #88BA44;
   color: #FAFAF2;
   border-radius: 24px;
   text-decoration: none;
   padding: 0.5rem 1.5rem;
   text-align: center;
+  transition: transform 0.5s ease, background-color 0.3s ease;
 }
-.my-porrtfio:hover{
+.my-portefuelle:hover {
   background-color: #ADD400;
+}
+.my-portefuelle:active {
+  transform: scale(1.06);
 }
 /* contact section */
 .Contact {
@@ -195,6 +245,7 @@ header {
   margin-bottom: 2rem;
   text-align: center;
   justify-content: center;
+  pointer-events: none;
 }
 .email {
   color: #5B3A22;
@@ -225,9 +276,17 @@ footer{
   background-color: #F47A2A;
   color: #FFFF;
   width: 100%;
+  pointer-events: none;
 } 
 /* Media Queries for Responsiveness */
 @media (max-width: 600px) {
+  .cat {
+    font-size: 0.9rem;
+  }
+  .navbar ul {
+    font-size: 0.8rem;
+    gap: 1rem;
+  }
   .illustration {
     margin-right: 0;
   }
