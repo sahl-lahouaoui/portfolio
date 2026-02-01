@@ -57,6 +57,8 @@ header {
 .illustration {
   height: 400px;
   margin-right: 2rem;
+  pointer-events: none;
+  user-select: none;
 }
 .heroSub {
   display: flex;
@@ -116,6 +118,8 @@ header {
   height: 15rem;
   border-radius: 50%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  user-select: none;
 }
 .cvtitle {
   font-size: 4rem;
@@ -131,6 +135,8 @@ header {
 }
 .lalala {
   width: 100vw;
+  pointer-events: none;
+  user-select: none;
 }
 .skills {
   display: flex;
@@ -148,6 +154,8 @@ header {
   gap: 2rem;
   margin: 1rem;
   margin-top: 3rem;
+  pointer-events: none;
+  user-select: none;
 }
 /* work section */
 .work {
